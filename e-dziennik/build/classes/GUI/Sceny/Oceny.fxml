@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Kontrolery.OcenyController">
+   <left>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="375.0" prefWidth="186.0">
+               <children>
+                  <VBox layoutX="-1.0" prefHeight="375.0" prefWidth="189.0">
+                     <children>
+                        <ComboBox fx:id="comboRocznik" onAction="#wyswietlKlasy" prefWidth="150.0">
+                           <VBox.margin>
+                              <Insets left="20.0" top="30.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="comboKlasa" onAction="#wyswietlUczniow" prefWidth="150.0">
+                           <VBox.margin>
+                              <Insets left="20.0" top="30.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                        <ComboBox fx:id="comboBox" prefHeight="25.0" prefWidth="150.0">
+                           <VBox.margin>
+                              <Insets left="20.0" top="30.0" />
+                           </VBox.margin>
+                        </ComboBox>
+                     </children>
+                  </VBox>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </left>
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+         <menus>
+            <Menu mnemonicParsing="false" text="Przeglądaj">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#renderUczniowie" text="Uczniowie" />
+                  <MenuItem mnemonicParsing="false" onAction="#renderOceny" text="Oceny" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Dodaj">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#renderDodajUcznia" text="Dodaj ucznia" />
+                  <MenuItem mnemonicParsing="false" onAction="#renderDodajPrzedmiot" text="Dodaj przedmiot" />
+                  <MenuItem mnemonicParsing="false" onAction="#renderDodajKlase" text="Dodaj klase" />
+                  <MenuItem mnemonicParsing="false" onAction="#renderDodajRocznik" text="Dodaj rocznik" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Usuń">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#renderUsunUcznia" text="Usuń ucznia" />
+                  <MenuItem mnemonicParsing="false" onAction="#renderUsunPrzedmiot" text="Usuń przedmiot" />
+                  <MenuItem mnemonicParsing="false" onAction="#renderUsunKlase" text="Usuń klase" />
+                  <MenuItem mnemonicParsing="false" onAction="#renderUsunRocznik" text="Usuń rocznik" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="364.0" prefWidth="398.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="172.0" minWidth="10.0" prefWidth="161.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="147.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.0" minWidth="10.0" prefWidth="86.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="comboOceny" prefWidth="150.0" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Button mnemonicParsing="false" onAction="#dodajOcene" text="Dodaj" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP">
+                     <GridPane.margin>
+                        <Insets top="70.0" />
+                     </GridPane.margin></Button>
+                  <Button mnemonicParsing="false" onAction="#usunOcene" text="Usuń" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                     <GridPane.margin>
+                        <Insets bottom="70.0" />
+                     </GridPane.margin></Button>
+                  <TableView fx:id="tableView" prefHeight="375.0" prefWidth="154.0" />
+                  <TableView fx:id="tableOceny" prefHeight="375.0" prefWidth="101.0" GridPane.columnIndex="1">
+                     <columns>
+                        <TableColumn fx:id="ocena" prefWidth="75.0" text="Ocena" />
+                     </columns></TableView>
+               </children>
+            </GridPane>
+         </children>
+      </HBox>
+   </center>
+</BorderPane>

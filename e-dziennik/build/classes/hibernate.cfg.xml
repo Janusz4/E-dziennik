@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <property name="connection.url">jdbc:mysql://localhost/e-dziennik</property>
+    <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="connection.username">root</property>
+    <property name="connection.password"/>
+    <property name="hbm2ddl.auto">update</property>
+    <mapping class="Tabele.Uczen"/>
+    <mapping class="Tabele.Klasa"/>
+    <mapping class="Tabele.Przedmiot"/>
+    <mapping class="Tabele.Ocena"/>
+    <mapping class="Tabele.Rocznik"/>
+    
+  </session-factory>
+
+</hibernate-configuration>
