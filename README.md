@@ -8,7 +8,7 @@ W projekcie zaimplementowane jest przeglądanie, dodawanie uczniów, przedmiotó
 ![Rejestracja](/img/edycja_danych.JPG)</br>
 *Edycja danych*</br>
 
-![Rejestracja](/img/przegladanie_ocen.JPG)</br>
+![Rejestracja](/img/przegladanie_oceny.JPG)</br>
 *Przeglądanie ocen*</br>
 
 ![Rejestracja](/img/przegladanie_uczniow.JPG)</br>
